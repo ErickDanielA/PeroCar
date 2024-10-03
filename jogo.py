@@ -9,10 +9,10 @@ y = 200
 
 pos_x = 119
 
-pos_y_1 = 800
-pos_y_2 = 800
-pos_y_3 = 800
-pos_y_4 = 800
+pos_y_1 = randint(600, 1500)
+pos_y_2 = randint(600, 1500)
+pos_y_3 = randint(600, 1500)
+pos_y_4 = randint(600, 1500)
 
 velocidade = 12
 
@@ -24,6 +24,8 @@ carronpc = pygame.image.load("carros/carro_amarelo.png")
 carronpc2 = pygame.image.load("carros/carro_verde.png")
 carro_preto = pygame.image.load("carros/carro_preto.png")
 carro_policia = pygame.image.load("carros/carro_policia.png")
+
+
 
 velocidade_npc1 = 10
 velocidade_npc2 = 10
@@ -54,11 +56,13 @@ while janela_aberta:
 
     # pygame.draw.circle(janela, (0, 255, 0), (x, y), 50)
     
+    # Controles
     comandos = pygame.key.get_pressed()
-    if comandos[pygame.K_UP]:
-        y -= velocidade
-    if comandos[pygame.K_DOWN]:
-        y += velocidade
+    
+    # if comandos[pygame.K_UP]:
+    #     y -= velocidade
+    # if comandos[pygame.K_DOWN]:
+    #     y += velocidade
     if comandos[pygame.K_RIGHT]:
         x += velocidade
     if comandos[pygame.K_LEFT]:
