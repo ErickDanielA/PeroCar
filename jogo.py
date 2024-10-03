@@ -79,7 +79,7 @@ while janela_aberta:
     # Restrição de X para o jogador
     if x <= 90:
         x = 90
-    if x <= 470:
+    if x >= 470:
         x = 470
         
 
