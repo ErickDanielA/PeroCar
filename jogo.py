@@ -16,7 +16,9 @@ pos_y_4 = randint(600, 1500)
 
 velocidade = 12
 
-
+derlei_Segundos = 0
+tempo_Segundo = 0
+tempo_Minutos = 0
 
 fundo = pygame.image.load('carros/background-1_0.png')
 carro = pygame.image.load('carros/carro_vermelho.png')
@@ -48,9 +50,26 @@ while janela_aberta:
      
      
     font = pygame.font.SysFont('arial black', 30)
-    texto = font.render("Timer: ", True ,(255, 255, 255),(0,0,0 ))
+    if tempo_Segundo <= 9:
+        texto = font.render(f" Timer: {tempo_Minutos}:0{tempo_Segundo}", True ,(255, 255, 255),(0,0,0 ))
+    else:
+        
+        texto = font.render(f" Timer: {tempo_Minutos}:{tempo_Segundo}", True ,(255, 255, 255),(0,0,0 ))
     pos_texto = texto.get_rect()                                                        
-    pos_texto.center = (65, 50)   
+    pos_texto.center = (86, 50)   
+    
+    if derlei_Segundos <= 20:
+        derlei_Segundos += 1
+    else:
+        derlei_Segundos = 0
+        tempo_Segundo += 1
+        # texto = font.render(f" Timer: {tempo_Minutos}:{tempo_Segundo}", True ,(255, 255, 255),(0,0,0 ))
+
+
+    if tempo_Segundo == 60:
+        tempo_Segundo = 0
+        tempo_Minutos += 1
+
 
     janela.blit(fundo, (0, 0))
     janela.blit(carro, (x, y))
