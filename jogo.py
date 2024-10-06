@@ -45,7 +45,12 @@ while janela_aberta:
         if event.type == pygame.QUIT:
             janela_aberta = False
     
-        
+     
+     
+    font = pygame.font.SysFont('arial black', 30)
+    texto = font.render("Timer: ", True ,(255, 255, 255),(0,0,0 ))
+    pos_texto = texto.get_rect()                                                        
+    pos_texto.center = (65, 50)   
 
     janela.blit(fundo, (0, 0))
     janela.blit(carro, (x, y))
@@ -53,11 +58,7 @@ while janela_aberta:
     janela.blit(carronpc2, (pos_x + 375, pos_y_2))
     janela.blit(carro_preto, (pos_x + 175, pos_y_3))
     janela.blit(carro_policia, (pos_x + 255, pos_y_4))
-
-    font = pygame.font.SysFont('arial black', 30)
-    texto = font.render("Timer: ", True ,(255, 255, 255),(0,0,0 ))
-    pos_texto = texto.get_rect()                                                        
-    pos_texto.center(65, 50)
+    janela.blit(texto, pos_texto)
 
     # pygame.draw.circle(janela, (0, 255, 0), (x, y), 50)
     
